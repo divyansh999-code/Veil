@@ -4,7 +4,7 @@
 
 Veil is a Chrome extension that uses AI to detect and expose psychological manipulation tactics on any webpage — in real time, directly on the page.
 
-![Veil in action on Amazon](<img width="1919" height="913" alt="Image" src="https://github.com/user-attachments/assets/b56dd6f9-ef5d-49b4-a72d-9dfe14fc1f3e" />)
+<img width="1919" height="913" alt="Image" src="https://github.com/user-attachments/assets/b56dd6f9-ef5d-49b4-a72d-9dfe14fc1f3e" />
 
 ---
 
