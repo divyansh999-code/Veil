@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-blur: blur(20px);
+    --text-white: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --high-severity: #ff4a4a;
+    --medium-severity: #ffae42;
+    --low-severity: #edd03a;
+    --success-green: #4ade80;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-white);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    margin: 0;
+    padding: 24px;
+    width: 380px;
+    min-height: 500px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+body.settings-page {
+    width: 450px;
+    max-width: 95vw;
+    margin: 40px auto;
+    border-radius: 24px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-white);
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-white);
+}
+
+/* Frosted Glass Inputs */
+select, input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    outline: none;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+select option {
+    background: #764ba2;
+    color: white;
+}
+
+select:focus, input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Primary Glass Pill Button */
+.btn-primary {
+    margin-top: 20px;
+    width: 100%;
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Transparent Glass Pill Button */
+.btn-glass {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px 24px;
+    background: transparent;
+    color: white;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#results {
+    margin-top: 24px;
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Custom Scrollbar */
+#results::-webkit-scrollbar {
+    width: 6px;
+}
+#results::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* Result Cards */
+.result-item {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left-width: 6px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    color: white;
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-item.high { border-left-color: var(--high-severity); }
+.result-item.medium { border-left-color: var(--medium-severity); }
+.result-item.low { border-left-color: var(--low-severity); }
+
+.category-label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.quote-text {
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    display: block;
+    overflow-wrap: break-word;
+}
+
+.explanation-text {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.4;
+}
+
+.status {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.status.complete {
+    color: var(--success-green);
+    font-weight: 600;
+}
+
+/* In-page Highlights (Stay consistent) */
+.pe-manipulation-highlight {
+    outline: 2px dashed rgba(255, 255, 255, 0.8) !important;
+    outline-offset: 2px !important;
+    position: relative !important;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3) !important;
+    z-index: 2147483646 !important;
+}
+
+.pe-manipulation-badge {
+    position: absolute !important;
+    bottom: calc(100% + 8px) !important;
+    left: 0 !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    color: #1a1a2e !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 6px 12px !important;
+    font-size: 12px !important;
+    border-radius: 9999px !important;
+    z-index: 2147483647 !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+}
+
+.badge-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.badge-dot.high { background: var(--high-severity); }
+.badge-dot.medium { background: var(--medium-severity); }
+.badge-dot.low { background: var(--low-severity); }
+
+.pe-tooltip {
+    position: fixed !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+    backdrop-filter: blur(15px) !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+    z-index: 2147483647 !important;
+    max-width: 250px !important;
+    font-size: 13px !important;
+    color: #1a1a2e !important;
+    opacity: 0;
+}
+.pe-tooltip.visible { opacity: 1; }
+

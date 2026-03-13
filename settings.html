@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings - Veil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="settings-page" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%); background-attachment: fixed;">
+    <h2>Veil Settings</h2>
+    
+    <label for="provider">AI Provider</label>
+    <select id="provider">
+        <option value="groq">Groq (Recommended - Fast & Free)</option>
+        <option value="gemini">Google Gemini</option>
+        <option value="openai">OpenAI</option>
+        <option value="claude">Anthropic Claude</option>
+    </select>
+
+    <label for="apiKey">API Key</label>
+    <input type="password" id="apiKey" placeholder="Enter your API key">
+
+    <button id="saveBtn" class="btn-primary">Save Settings</button>
+    <div id="status" class="status"></div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
